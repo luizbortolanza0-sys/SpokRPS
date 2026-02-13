@@ -1,9 +1,9 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
     palette: {
         primary:{
-            main:"#00000"
+            main:"hsl(39, 89%, 49%)"
         }
     }
 });
