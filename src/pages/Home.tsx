@@ -3,11 +3,26 @@ import Logo from "../../images/logo.svg"
 import { useState } from "react"
 import { Rules } from "../components/Rules"
 import { GameChoices } from "../components/GameChoices"
+import { GameLogic } from "../components/GameLogic"
 
 
 const Home = () => {
 
-    const [openRules, setOpenRules] = useState((false));
+    const [openRules, setOpenRules] = useState(false);
+    const [selectPlay, setSelectPlay] = useState(false);
+    const [playOption, setPlayOption] = useState("");
+
+    function handleClickPlay(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+        const value = e.currentTarget.value
+        setPlayOption(value);
+        console.log(value);
+        setSelectPlay(true)
+    }
+    function playAgain(){
+        console.log(playOption);
+        setPlayOption("");
+        setSelectPlay(false);
+    }
 
     return (<Stack
         component={Box}
@@ -74,7 +89,10 @@ const Home = () => {
                     </Typography>
                 </Card>
             </Box>
-            <GameChoices />
+
+            {selectPlay === true && <GameLogic playAgain={playAgain} />}
+            {selectPlay === false && <GameChoices handleClickPlay={handleClickPlay} />}
+
         </Box>
         <Box
             alignSelf={{ xs: "center", sm: "flex-end" }}
@@ -101,7 +119,7 @@ const Home = () => {
                 >Rules
                 </Typography>
             </Button>
-            <Rules openRules={openRules} setOpenRules={setOpenRules}/>
+            <Rules openRules={openRules} setOpenRules={setOpenRules} />
         </Box>
 
 
