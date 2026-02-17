@@ -1,14 +1,31 @@
 import { createTheme } from "@mui/material";
+import "@fontsource/barlow-semi-condensed/600.css";
+import "@fontsource/barlow-semi-condensed/700.css";
 
 export const theme = createTheme({
     palette: {
         primary: {
-            light:"hsl(220, 15%, 72%)",
+            light:"hsl(220, 15%, 86%)",
             main: 'hsl(246, 11%, 37%)'
+        },
+        secondary:{
+            main:"hsl(0, 0%, 100%)"
         },
         text: {
             primary: 'hsl(229, 25%, 31%)',
             secondary: "hsl(229, 64%, 46%)"
+        }
+    },
+    typography:{
+        fontFamily:"'Barlow Semi Condensed', sans-serif",
+        h2:{
+            fontWeight:"700"
+        },
+        h4:{
+            fontWeight:"700"
+        },
+        body2:{
+            fontWeight:"600"
         }
     }
 });
