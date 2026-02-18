@@ -11,15 +11,19 @@ const Home = () => {
     const [openRules, setOpenRules] = useState(false);
     const [selectPlay, setSelectPlay] = useState(false);
     const [playOption, setPlayOption] = useState("");
+    const [score, setScore] = useState(0);
+
+    function addScore (){
+        setScore(score+1)
+        return
+    }
 
     function handleClickPlay(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         const value = e.currentTarget.value
         setPlayOption(value);
-        console.log(value);
         setSelectPlay(true)
     }
     function playAgain(){
-        console.log(playOption);
         setPlayOption("");
         setSelectPlay(false);
     }
@@ -85,12 +89,12 @@ const Home = () => {
                     <Typography
                         variant="h2"
                     >
-                        12
+                        {score}
                     </Typography>
                 </Card>
             </Box>
 
-            {selectPlay === true && <GameLogic playAgain={playAgain} />}
+            {selectPlay === true && <GameLogic playAgain={playAgain} value={playOption} addScore={addScore} />}
             {selectPlay === false && <GameChoices handleClickPlay={handleClickPlay} />}
 
         </Box>

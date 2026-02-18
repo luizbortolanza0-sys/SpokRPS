@@ -11,9 +11,12 @@ export const theme = createTheme({
         secondary:{
             main:"hsl(0, 0%, 100%)"
         },
+        background:{
+            default:"hsl(237, 48%, 15%, 0.5)"
+        },
         text: {
             primary: 'hsl(229, 25%, 31%)',
-            secondary: "hsl(229, 64%, 46%)"
+            secondary: "hsl(229, 64%, 46%)",
         }
     },
     typography:{
