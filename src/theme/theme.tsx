@@ -12,7 +12,7 @@ export const theme = createTheme({
             main:"hsl(0, 0%, 100%)"
         },
         background:{
-            default:"hsl(237, 48%, 15%, 0.5)"
+            default:"hsl(237, 48%, 15%)"
         },
         text: {
             primary: 'hsl(229, 25%, 31%)',

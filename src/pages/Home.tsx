@@ -14,7 +14,7 @@ const Home = () => {
     const [score, setScore] = useState(0);
 
     function addScore (){
-        setScore(score+1)
+        setScore(score + 1)
         return
     }
 

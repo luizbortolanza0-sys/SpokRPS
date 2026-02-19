@@ -9,7 +9,9 @@ import { PlayAgainBox } from "./PlayAgainBox"
 
 const min = 0;
 const max = 3;
-var count = 0;
+const RightRender = 2
+const StartRender = 0
+var Render = StartRender;
 
 type GameLogicProps = {
     playAgain: () => void,
@@ -20,12 +22,10 @@ type GameLogicProps = {
 
 
 export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
-    if (value !== "") {
-
 
         const HousePick = ["Scissors", "Rock", "Paper"]
 
-        function getRandomArbitrary() {
+        function getRandomNumber() {
             return Math.trunc(Math.random() * (max - min) + min);
         }
         const [houseValue, setHouseValue] = useState("")
@@ -47,6 +47,14 @@ export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
             return "Player"
         }
 
+        function VerifyTheRightRender(){
+            Render++;
+            if(Render == RightRender){
+                Render = StartRender;
+                return true
+            }
+        }
+
         useEffect(() => {
             if (winner === "Player") {
                 addScore();
@@ -55,33 +63,25 @@ export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
 
         useEffect(() => {
             setTimeout(() => {
-                console.log(count)
-                count++;
-                if (count == 2) {
-                    count = 0;
-                    const randomValue = getRandomArbitrary();
-                    const randomHousePick = HousePick[randomValue]
+                if (VerifyTheRightRender()) {
+                    const randomValue = getRandomNumber();
+                    const randomHousePick = HousePick[randomValue];
                     setHouseValue(randomHousePick);
-                    console.log(randomHousePick)
                     setWinner(compareValues(randomHousePick, value));
                 }
             }, 1000);
-        }, []);
+        }, [value]);
 
         function VerifyWinner() {
             if (winner == "Draw") {
-                return <PlayAgainBox color='red' text={"Draw!"} playAgain={playAgain} />
+                return <PlayAgainBox text={"Draw"} playAgain={playAgain} />
             }
             if (winner == "House") {
-                return <PlayAgainBox color='red' text={"You Lose!"} playAgain={playAgain} />
+                return <PlayAgainBox text={"You Lose"} playAgain={playAgain} />
             }
             if (winner == "Player") {
-                return <PlayAgainBox color='white' text={"You Win!"} playAgain={playAgain} />
+                return <PlayAgainBox text={"You Win"} playAgain={playAgain} />
             }
-        }
-
-        function handleClickPlay() {
-
         }
 
         return (
@@ -142,6 +142,7 @@ export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
                         overflow={"visible"}
                         sx={{
                             backgroundColor: "background.default",
+                            opacity:"0.5",
                             height: { xs: "110px", sm: "140px" },
                             width: { xs: "110px", sm: "140px" },
                             borderRadius: "50%",
@@ -162,13 +163,7 @@ export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
                         Icon={Paper}
                     />}
                 </Box>
-
-
-
-
-
             </Box>)
-    }
 
     return (<></>)
 }

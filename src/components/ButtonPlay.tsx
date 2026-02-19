@@ -14,6 +14,9 @@ interface ButtonPlayProps {
 const ButtonPlay = ({ color, Icon, value, handleClickPlay }: ButtonPlayProps) => {
     return (
         <Box
+            component={Button}
+            onClick={handleClickPlay}
+            value={value}
             height={{ xs: "150px", sm: "180px" }}
             width={{ xs: "150px", sm: "180px" }}
             borderRadius={"50%"}
@@ -22,7 +25,11 @@ const ButtonPlay = ({ color, Icon, value, handleClickPlay }: ButtonPlayProps) =>
             alignItems={"center"}
             justifyContent={"center"}
             sx={{
-                borderBottom: `10px solid ${color.dark}`
+                borderBottom: `10px solid ${color.dark}`,
+                ":hover":{
+                    cursor:"pointer",
+                    boxShadow:"10"
+                }
             }}
         >
             <Button
