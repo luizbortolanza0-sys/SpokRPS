@@ -4,11 +4,13 @@ import { colors } from "../theme/theme"
 import Rock from "../../images/icon-rock.svg"
 import Paper from "../../images/icon-paper.svg"
 import Scissors from "../../images/icon-scissors.svg"
+import Lizard from "../../images/icon-lizard.svg"
+import Spok from "../../images/icon-spock.svg"
 import { useEffect, useState } from "react"
 import { PlayAgainBox } from "./PlayAgainBox"
 
 const min = 0;
-const max = 3;
+const max = 5;
 const RightRender = 2
 const StartRender = 0
 var Render = StartRender;
@@ -23,7 +25,7 @@ type GameLogicProps = {
 
 export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
 
-        const HousePick = ["Scissors", "Rock", "Paper"]
+        const HousePick = ["Scissors", "Rock", "Paper", "Spok", "Lizard"]
 
         function getRandomNumber() {
             return Math.trunc(Math.random() * (max - min) + min);
@@ -35,13 +37,19 @@ export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
             if (value === randomHousePick) {
                 return "Draw"
             }
-            if (value === "Scissors" && randomHousePick === "Rock") {
+            if (value === "Scissors" && (randomHousePick === "Rock"|| randomHousePick === "Spok")) {
                 return "House";
             }
-            if (value === "Rock" && randomHousePick === "Paper") {
+            if (value === "Rock" && (randomHousePick === "Paper"|| randomHousePick === "Spok")) {
                 return "House";
             }
-            if (value === "Paper" && randomHousePick === "Scissors") {
+            if (value === "Paper" && (randomHousePick === "Scissors"|| randomHousePick === "Lizard")) {
+                return "House";
+            }
+            if (value === "Spok" && (randomHousePick === "Lizard"|| randomHousePick === "Paper")) {
+                return "House";
+            }
+            if (value === "Lizard" && (randomHousePick === "Rock"|| randomHousePick === "Scissors")) {
                 return "House";
             }
             return "Player"
@@ -118,6 +126,15 @@ export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
                         color={colors.red}
                         Icon={Rock}
                     />}
+                    {value === "Spok" &&  <CustomizedChoice
+                        color={colors.lightBlue}
+                        Icon={Spok}
+                    />}
+
+                    {value === "Lizard" &&  <CustomizedChoice
+                        color={colors.purple}
+                        Icon={Lizard}
+                    />}
                 </Box>
 
                 {winner == "" ? "" : <VerifyWinner />}
@@ -161,6 +178,15 @@ export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
                     {houseValue === "Paper" &&  <CustomizedChoice
                         color={colors.blue}
                         Icon={Paper}
+                    />}
+                    {houseValue === "Spok" &&  <CustomizedChoice
+                        color={colors.lightBlue}
+                        Icon={Spok}
+                    />}
+
+                    {houseValue === "Lizard" &&  <CustomizedChoice
+                        color={colors.purple}
+                        Icon={Lizard}
                     />}
                 </Box>
             </Box>)

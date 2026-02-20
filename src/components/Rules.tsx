@@ -1,6 +1,6 @@
 import { Box, Button, Card, Dialog, Typography } from "@mui/material"
 import CloseIcon from "../../images/icon-close.svg"
-import RulesImage from "../../images/image-rules.svg"
+import RulesImage from "../../images/image-rules-bonus.svg"
 
 
 type RulesProps = {

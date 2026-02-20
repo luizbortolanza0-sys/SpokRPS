@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material";
 import "@fontsource/barlow-semi-condensed/600.css";
 import "@fontsource/barlow-semi-condensed/700.css";
+import { lightBlue, purple } from "@mui/material/colors";
 
 export const theme = createTheme({
     palette: {
@@ -48,4 +49,12 @@ export const colors = {
         main: "hsl(349, 71%, 52%)",
         dark: "hsl(347, 75%, 35%)",
     },
+    lightBlue:{
+        main:"hsl(189, 59%, 53%)",
+        dark:"hsl(194, 58%, 42%)"
+    },
+    purple:{
+        main:"hsl(261, 73%, 60%)",
+        dark:"hsl(261, 51%, 44%)"
+    }
 };

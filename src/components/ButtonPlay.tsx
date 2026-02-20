@@ -17,15 +17,15 @@ const ButtonPlay = ({ color, Icon, value, handleClickPlay }: ButtonPlayProps) =>
             component={Button}
             onClick={handleClickPlay}
             value={value}
-            height={{ xs: "150px", sm: "180px" }}
-            width={{ xs: "150px", sm: "180px" }}
+            height={{ xs: "110px", sm: "150px" }}
+            width={{ xs: "110px", sm: "150px" }}
             borderRadius={"50%"}
             bgcolor={color.main}
             display={'flex'}
             alignItems={"center"}
             justifyContent={"center"}
             sx={{
-                borderBottom: `10px solid ${color.dark}`,
+                borderBottom: {xs:`5px solid ${color.dark}`,sm:`10px solid ${color.dark}`},
                 ":hover":{
                     cursor:"pointer",
                     boxShadow:"10"
@@ -38,13 +38,22 @@ const ButtonPlay = ({ color, Icon, value, handleClickPlay }: ButtonPlayProps) =>
                 value={value}
                 disableElevation={true}
                 sx={(theme) => ({
-                    borderTop: `10px solid ${theme.palette.primary.light}`,
+                    display:"flex",
+                    alignItems:"center",
+                    justifyContent:"center",
+                    borderTop: {xs:`5px solid ${theme.palette.primary.light}`, sm:`10px solid ${theme.palette.primary.light}`},
                     backgroundColor: "white",
-                    height: { xs: "110px", sm: "140px" },
-                    width: { xs: "110px", sm: "140px" },
+                    height: { xs: "80px", sm: "110px" },
+                    width: { xs: "80px", sm: "110px" },
                     borderRadius: "50%",
                 })}
-            ><img src={Icon} alt={value} /></Button>
+            ><Box component={"img"}
+            sx={{
+                height:{xs:"45px",sm:"63px"}
+            }}            
+            src={Icon}
+            alt={value}
+            ></Box></Button>
         </Box>);
 
 }

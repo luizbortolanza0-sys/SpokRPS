@@ -1,5 +1,5 @@
 import { Box, Button, Card, Stack, Typography } from "@mui/material"
-import Logo from "../../images/logo.svg"
+import Logo from "../../images/logo-bonus.svg"
 import { useState } from "react"
 import { Rules } from "../components/Rules"
 import { GameChoices } from "../components/GameChoices"
