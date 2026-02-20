@@ -113,25 +113,25 @@ export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
                     >
                         You Picked
                     </Typography>
-                    {value === "Scissors" &&  <CustomizedChoice
+                    {value === "Scissors" &&  <CustomizedChoice winner={winner==="Player"}
                         color={colors.gold}
                         Icon={Scissors}
                     />}
-                    {value === "Paper" &&  <CustomizedChoice
+                    {value === "Paper" &&  <CustomizedChoice winner={winner==="Player"}
                         color={colors.blue}
                         Icon={Paper}
                     />}
 
-                    {value === "Rock" &&  <CustomizedChoice
+                    {value === "Rock" &&  <CustomizedChoice winner={winner==="Player"}
                         color={colors.red}
                         Icon={Rock}
                     />}
-                    {value === "Spok" &&  <CustomizedChoice
+                    {value === "Spok" &&  <CustomizedChoice winner={winner==="Player"}
                         color={colors.lightBlue}
                         Icon={Spok}
                     />}
 
-                    {value === "Lizard" &&  <CustomizedChoice
+                    {value === "Lizard" &&  <CustomizedChoice winner={winner==="Player"}
                         color={colors.purple}
                         Icon={Lizard}
                     />}
@@ -167,24 +167,24 @@ export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
                     >
                     </Box>}
 
-                    {houseValue === "Rock" &&  <CustomizedChoice
+                    {houseValue === "Rock" &&  <CustomizedChoice winner={winner==="House"}
                         color={colors.red}
                         Icon={Rock}
                     />}
-                    {houseValue === "Scissors" &&  <CustomizedChoice
+                    {houseValue === "Scissors" &&  <CustomizedChoice  winner={winner==="House"}
                         color={colors.gold}
                         Icon={Scissors}
                     />}
-                    {houseValue === "Paper" &&  <CustomizedChoice
+                    {houseValue === "Paper" &&  <CustomizedChoice  winner={winner==="House"}
                         color={colors.blue}
                         Icon={Paper}
                     />}
-                    {houseValue === "Spok" &&  <CustomizedChoice
+                    {houseValue === "Spok" &&  <CustomizedChoice  winner={winner==="House"}
                         color={colors.lightBlue}
                         Icon={Spok}
                     />}
 
-                    {houseValue === "Lizard" &&  <CustomizedChoice
+                    {houseValue === "Lizard" &&  <CustomizedChoice  winner={winner==="House"}
                         color={colors.purple}
                         Icon={Lizard}
                     />}

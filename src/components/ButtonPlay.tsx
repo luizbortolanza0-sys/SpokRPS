@@ -8,7 +8,7 @@ interface ButtonPlayProps {
     },
     Icon: string,
     value: string,
-     handleClickPlay: (e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>void
+    handleClickPlay: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
 const ButtonPlay = ({ color, Icon, value, handleClickPlay }: ButtonPlayProps) => {
@@ -25,10 +25,10 @@ const ButtonPlay = ({ color, Icon, value, handleClickPlay }: ButtonPlayProps) =>
             alignItems={"center"}
             justifyContent={"center"}
             sx={{
-                borderBottom: {xs:`5px solid ${color.dark}`,sm:`8px solid ${color.dark}`},
-                ":hover":{
-                    cursor:"pointer",
-                    boxShadow:"10"
+                borderBottom: { xs: `5px solid ${color.dark}`, sm: `8px solid ${color.dark}` },
+                ":hover": {
+                    cursor: "pointer",
+                    boxShadow: "10",
                 }
             }}
         >
@@ -38,21 +38,21 @@ const ButtonPlay = ({ color, Icon, value, handleClickPlay }: ButtonPlayProps) =>
                 value={value}
                 disableElevation={true}
                 sx={(theme) => ({
-                    display:"flex",
-                    alignItems:"center",
-                    justifyContent:"center",
-                    borderTop: {xs:`5px solid ${theme.palette.primary.light}`, sm:`8px solid ${theme.palette.primary.light}`},
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderTop: { xs: `5px solid ${theme.palette.primary.light}`, sm: `8px solid ${theme.palette.primary.light}` },
                     backgroundColor: "white",
                     height: { xs: "80px", sm: "110px" },
                     width: { xs: "80px", sm: "110px" },
-                    borderRadius: "50%",
+                    borderRadius: "50%"
                 })}
             ><Box component={"img"}
-            sx={{
-                height:{xs:"45px",sm:"63px"}
-            }}            
-            src={Icon}
-            alt={value}
+                sx={{
+                    height: { xs: "45px", sm: "63px" }
+                }}
+                src={Icon}
+                alt={value}
             ></Box></Button>
         </Box>);
 
