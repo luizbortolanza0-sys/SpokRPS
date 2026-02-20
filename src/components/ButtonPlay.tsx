@@ -25,7 +25,7 @@ const ButtonPlay = ({ color, Icon, value, handleClickPlay }: ButtonPlayProps) =>
             alignItems={"center"}
             justifyContent={"center"}
             sx={{
-                borderBottom: {xs:`5px solid ${color.dark}`,sm:`10px solid ${color.dark}`},
+                borderBottom: {xs:`5px solid ${color.dark}`,sm:`8px solid ${color.dark}`},
                 ":hover":{
                     cursor:"pointer",
                     boxShadow:"10"
@@ -41,7 +41,7 @@ const ButtonPlay = ({ color, Icon, value, handleClickPlay }: ButtonPlayProps) =>
                     display:"flex",
                     alignItems:"center",
                     justifyContent:"center",
-                    borderTop: {xs:`5px solid ${theme.palette.primary.light}`, sm:`10px solid ${theme.palette.primary.light}`},
+                    borderTop: {xs:`5px solid ${theme.palette.primary.light}`, sm:`8px solid ${theme.palette.primary.light}`},
                     backgroundColor: "white",
                     height: { xs: "80px", sm: "110px" },
                     width: { xs: "80px", sm: "110px" },
