@@ -17,15 +17,15 @@ const ButtonPlay = ({ color, Icon, value, handleClickPlay }: ButtonPlayProps) =>
             component={Button}
             onClick={handleClickPlay}
             value={value}
-            height={{ xs: "110px", sm: "150px" }}
-            width={{ xs: "110px", sm: "150px" }}
+            height={{ xs: "110px", xl: "150px" }}
+            width={{ xs: "110px", xl: "150px" }}
             borderRadius={"50%"}
             bgcolor={color.main}
             display={'flex'}
             alignItems={"center"}
             justifyContent={"center"}
             sx={{
-                borderBottom: { xs: `5px solid ${color.dark}`, sm: `8px solid ${color.dark}` },
+                borderBottom: { xs: `5px solid ${color.dark}`, xl: `8px solid ${color.dark}` },
                 ":hover": {
                     cursor: "pointer",
                     boxShadow: "10",
@@ -41,15 +41,15 @@ const ButtonPlay = ({ color, Icon, value, handleClickPlay }: ButtonPlayProps) =>
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    borderTop: { xs: `5px solid ${theme.palette.primary.light}`, sm: `8px solid ${theme.palette.primary.light}` },
+                    borderTop: { xs: `5px solid ${theme.palette.primary.light}`, xl: `8px solid ${theme.palette.primary.light}` },
                     backgroundColor: "white",
-                    height: { xs: "80px", sm: "110px" },
-                    width: { xs: "80px", sm: "110px" },
+                    height: { xs: "80px", xl: "110px" },
+                    width: { xs: "80px", xl: "110px" },
                     borderRadius: "50%"
                 })}
             ><Box component={"img"}
                 sx={{
-                    height: { xs: "45px", sm: "63px" }
+                    height: { xs: "45px", xl: "63px" }
                 }}
                 src={Icon}
                 alt={value}

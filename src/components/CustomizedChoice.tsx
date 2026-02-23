@@ -11,8 +11,8 @@ interface CustomizedChoiceProps {
 
 export const CustomizedChoice = ({ color, Icon, winner }: CustomizedChoiceProps) => {
     return (<Box
-        height={{ xs: "150px", sm: "270px" }}
-        width={{ xs: "150px", sm: "270px" }}
+        height={{ xs: "150px", xl: "270px" }}
+        width={{ xs: "150px", xl: "270px" }}
         borderRadius={"50%"}
         bgcolor={color.main}
         display={'flex'}
@@ -30,8 +30,8 @@ export const CustomizedChoice = ({ color, Icon, winner }: CustomizedChoiceProps)
                 justifyContent: "center",
                 borderTop: `10px solid ${theme.palette.primary.light}`,
                 backgroundColor: "white",
-                height: { xs: "110px", sm: "210px" },
-                width: { xs: "110px", sm: "210px" },
+                height: { xs: "110px", xl: "210px" },
+                width: { xs: "110px", xl: "210px" },
                 borderRadius: "50%",
                 ...(winner && {
                     "&::before, &::after": {
@@ -48,6 +48,7 @@ export const CustomizedChoice = ({ color, Icon, winner }: CustomizedChoiceProps)
                     },
 
                     "& span": {
+                        content: '""',
                         position: "absolute",
                         inset: "-25px",
                         borderRadius: "50%",
@@ -76,7 +77,7 @@ export const CustomizedChoice = ({ color, Icon, winner }: CustomizedChoiceProps)
             <Box component={"img"}
                 src={Icon}
                 sx={{
-                    height: { xs: "auto", sm: "100px" },
+                    height: { xs: "auto", xl: "100px" },
 
                 }}
             ></Box>

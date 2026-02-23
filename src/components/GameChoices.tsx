@@ -14,14 +14,14 @@ type Props = {
 export const GameChoices = ({handleClickPlay}: Props) => {
     return <Box
         width={{ xs: '100%', sm: "90%", md: '80%' }}
-        height={{xs:"280px",sm:"380px"}}
+        height={{xs:"280px",xl:"380px"}}
         display={"flex"}
-        gap={{ xs: "20px", sm: "20px" }}
+        gap="20px"
         flexDirection={"column"}
         sx={{
             mt:'35px',
             background: `url(../../images/bg-pentagon.svg)no-repeat center`,
-            backgroundSize: {xs:"280px",sm:"380px"},
+            backgroundSize: {xs:"280px",xl:"380px"},
         }}
     >
         <Box
@@ -29,7 +29,7 @@ export const GameChoices = ({handleClickPlay}: Props) => {
             display={"flex"}
             justifyContent={"center"}
             position={"relative"}
-            top={{xs:-45 ,sm:-65}}
+            top={{xs:-45 ,xl:-65}}
         >
             <ButtonPlay
                 handleClickPlay={handleClickPlay}
@@ -43,9 +43,9 @@ export const GameChoices = ({handleClickPlay}: Props) => {
             display={"flex"}
             width={"100%"}
             justifyContent={"center"}
-            gap={{xs:15,sm:25}}
+            gap={{xs:15,xl:25}}
             position={"relative"}
-            top={{xs:-75 ,sm:-100}}
+            top={{xs:-75 ,xl:-100}}
         >
             <ButtonPlay
                 handleClickPlay={handleClickPlay}
@@ -67,8 +67,8 @@ export const GameChoices = ({handleClickPlay}: Props) => {
             display={"flex"}
             justifyContent={"center"}
             position={"relative"}
-            gap={{xs:7,sm:15}}
-            top={{xs:-55 ,sm:-65}}
+            gap={{xs:7,xl:15}}
+            top={{xs:-55 ,xl:-65}}
         >
             <ButtonPlay
                 handleClickPlay={handleClickPlay}

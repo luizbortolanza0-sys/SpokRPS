@@ -9,7 +9,7 @@ import { GameLogic } from "../components/GameLogic"
 const Home = () => {
 
     const [openRules, setOpenRules] = useState(false);
-    const [selectPlay, setSelectPlay] = useState(false);
+    const [selectedPlay, setSelectedPlay] = useState(false);
     const [playOption, setPlayOption] = useState("");
     const [score, setScore] = useState(0);
 
@@ -21,11 +21,11 @@ const Home = () => {
     function handleClickPlay(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         const value = e.currentTarget.value
         setPlayOption(value);
-        setSelectPlay(true)
+        setSelectedPlay(true)
     }
     function playAgain(){
         setPlayOption("");
-        setSelectPlay(false);
+        setSelectedPlay(false);
     }
 
     return (<Stack
@@ -94,8 +94,8 @@ const Home = () => {
                 </Card>
             </Box>
 
-            {selectPlay === true && <GameLogic playAgain={playAgain} value={playOption} addScore={addScore} />}
-            {selectPlay === false && <GameChoices handleClickPlay={handleClickPlay} />}
+            {selectedPlay === true && <GameLogic playAgain={playAgain} value={playOption} addScore={addScore} />}
+            {selectedPlay === false && <GameChoices handleClickPlay={handleClickPlay} />}
 
         </Box>
         <Box

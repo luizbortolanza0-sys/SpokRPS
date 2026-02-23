@@ -160,8 +160,8 @@ export const GameLogic = ({ playAgain, value, addScore }: GameLogicProps) => {
                         sx={{
                             backgroundColor: "background.default",
                             opacity:"0.5",
-                            height: { xs: "110px", sm: "140px" },
-                            width: { xs: "110px", sm: "140px" },
+                            height: { xs: "110px", xl: "210px" },
+                            width: { xs: "110px", xl: "210px" },
                             borderRadius: "50%",
                         }}
                     >
